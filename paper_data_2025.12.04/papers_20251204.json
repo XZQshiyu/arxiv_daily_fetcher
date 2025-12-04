@@ -1,0 +1,1083 @@
+{
+  "fetch_date": "2025-12-04T16:45:10.539713",
+  "total_papers": 41,
+  "papers": [
+    {
+      "id": "http://arxiv.org/abs/2512.04082v1",
+      "arxiv_id": "2512.04082v1",
+      "title": "PosterCopilot: Toward Layout Reasoning and Controllable Editing for Professional Graphic Design",
+      "authors": [
+        "Jiazhe Wei",
+        "Ken Li",
+        "Tianyu Lao",
+        "Haofan Wang",
+        "Liang Wang",
+        "Caifeng Shan",
+        "Chenyang Si"
+      ],
+      "summary": "Graphic design forms the cornerstone of modern visual communication, serving as a vital medium for promoting cultural and commercial events. Recent advances have explored automating this process using Large Multimodal Models (LMMs), yet existing methods often produce geometrically inaccurate layouts and lack the iterative, layer-specific editing required in professional workflows. To address these limitations, we present PosterCopilot, a framework that advances layout reasoning and controllable editing for professional graphic design. Specifically, we introduce a progressive three-stage training strategy that equips LMMs with geometric understanding and aesthetic reasoning for layout design, consisting of Perturbed Supervised Fine-Tuning, Reinforcement Learning for Visual-Reality Alignment, and Reinforcement Learning from Aesthetic Feedback. Furthermore, we develop a complete workflow that couples the trained LMM-based design model with generative models, enabling layer-controllable, iterative editing for precise element refinement while maintaining global visual consistency. Extensive experiments demonstrate that PosterCopilot achieves geometrically accurate and aesthetically superior layouts, offering unprecedented controllability for professional iterative design.",
+      "published": "2025-12-03T18:59:37+00:00",
+      "updated": "2025-12-03T18:59:37+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.04082v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.04082v1",
+      "found_date": "2025-12-04T16:34:56.947557"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.04069v1",
+      "arxiv_id": "2512.04069v1",
+      "title": "SpaceTools: Tool-Augmented Spatial Reasoning via Double Interactive RL",
+      "authors": [
+        "Siyi Chen",
+        "Mikaela Angelina Uy",
+        "Chan Hee Song",
+        "Faisal Ladhak",
+        "Adithyavairavan Murali",
+        "Qing Qu",
+        "Stan Birchfield",
+        "Valts Blukis",
+        "Jonathan Tremblay"
+      ],
+      "summary": "Vision Language Models (VLMs) demonstrate strong qualitative visual understanding, but struggle with metrically precise spatial reasoning required for embodied applications. The agentic paradigm promises that VLMs can use a wide variety of tools that could augment these capabilities, such as depth estimators, segmentation models, and pose estimators. Yet it remains an open challenge how to realize this vision without solely relying on handcrafted prompting strategies or enforcing fixed, predefined tool pipelines that limit VLMs' ability to discover optimal tool-use patterns. Reinforcement Learning could overcome this gap, but has so far been limited to reasoning with a single visual tool due to the large search space in multi-tool reasoning. We introduce Double Interactive Reinforcement Learning (DIRL), a two-phase training framework where VLMs learn to coordinate multiple tools through interactive exploration and feedback. In the teaching phase, we combine demonstrations from a single tool specialist trained via interactive RL with traces from a frontier model using all tools. In the exploration phase, the model further refines multi-tool coordination through continued RL. Our model, SpaceTools, with tool-augmented spatial reasoning ability, achieves state-of-the-art performance on spatial understanding benchmarks (RoboSpatial-Home, BLINK, BOP-ASK) and demonstrates reliable real-world manipulation using a 7-DOF robot as a tool. DIRL provides substantial improvements over the vanilla SFT (+12% on RoboSpatial) and RL (+16% on RoboSpatial) baselines. Project page: https://spacetools.github.io/.",
+      "published": "2025-12-03T18:50:04+00:00",
+      "updated": "2025-12-03T18:50:04+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.04069v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.04069v1",
+      "found_date": "2025-12-04T16:34:56.951566"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.04040v1",
+      "arxiv_id": "2512.04040v1",
+      "title": "RELIC: Interactive Video World Model with Long-Horizon Memory",
+      "authors": [
+        "Yicong Hong",
+        "Yiqun Mei",
+        "Chongjian Ge",
+        "Yiran Xu",
+        "Yang Zhou",
+        "Sai Bi",
+        "Yannick Hold-Geoffroy",
+        "Mike Roberts",
+        "Matthew Fisher",
+        "Eli Shechtman",
+        "Kalyan Sunkavalli",
+        "Feng Liu",
+        "Zhengqi Li",
+        "Hao Tan"
+      ],
+      "summary": "A truly interactive world model requires three key ingredients: real-time long-horizon streaming, consistent spatial memory, and precise user control. However, most existing approaches address only one of these aspects in isolation, as achieving all three simultaneously is highly challenging-for example, long-term memory mechanisms often degrade real-time performance. In this work, we present RELIC, a unified framework that tackles these three challenges altogether. Given a single image and a text description, RELIC enables memory-aware, long-duration exploration of arbitrary scenes in real time. Built upon recent autoregressive video-diffusion distillation techniques, our model represents long-horizon memory using highly compressed historical latent tokens encoded with both relative actions and absolute camera poses within the KV cache. This compact, camera-aware memory structure supports implicit 3D-consistent content retrieval and enforces long-term coherence with minimal computational overhead. In parallel, we fine-tune a bidirectional teacher video model to generate sequences beyond its original 5-second training horizon, and transform it into a causal student generator using a new memory-efficient self-forcing paradigm that enables full-context distillation over long-duration teacher as well as long student self-rollouts. Implemented as a 14B-parameter model and trained on a curated Unreal Engine-rendered dataset, RELIC achieves real-time generation at 16 FPS while demonstrating more accurate action following, more stable long-horizon streaming, and more robust spatial-memory retrieval compared with prior work. These capabilities establish RELIC as a strong foundation for the next generation of interactive world modeling.",
+      "published": "2025-12-03T18:29:20+00:00",
+      "updated": "2025-12-03T18:29:20+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "KV Cache"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.04040v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.04040v1",
+      "found_date": "2025-12-04T16:34:56.957121"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.04013v1",
+      "arxiv_id": "2512.04013v1",
+      "title": "AugServe: Adaptive Request Scheduling for Augmented Large Language Model Inference Serving",
+      "authors": [
+        "Ying Wang",
+        "Zhen Jin",
+        "Jiexiong Xu",
+        "Wenhai Lin",
+        "Yiquan Chen",
+        "Wenzhi Chen"
+      ],
+      "summary": "As augmented large language models (LLMs) with external tools become increasingly popular in web applications, improving augmented LLM inference serving efficiency and optimizing service-level objectives (SLOs) are critical for enhancing user experience. To achieve this, inference systems must maximize request handling within latency constraints, referred to as increasing effective throughput. However, existing systems face two major challenges: (i) reliance on first-come-first-served (FCFS) scheduling causes severe head-of-line blocking, leading to queuing delays exceeding the SLOs for many requests; and (ii) static batch token limit, which fails to adapt to fluctuating loads and hardware conditions. Both of these factors degrade effective throughput and service quality.\n  This paper presents AugServe, an efficient inference framework designed to reduce queueing latency and enhance effective throughput for augmented LLM inference services. The core idea of AugServe is a two-stage adaptive request scheduling strategy. Specifically, AugServe combines the inference features of augmented LLM requests to optimize the order of scheduling decisions (stage I). These decisions are continuously refined with runtime information (stage II), adapting to both request characteristics and system capabilities. In addition, AugServe dynamically adjusts the token batching mechanism based on hardware status and real-time load, further enhancing throughput performance. Experimental results show that AugServe achieves 4.7-33.1x and 3.3-13.2x higher effective throughput than vLLM and InferCept, while reducing time-to-first-token (TTFT) by up to 96.3% and 95.0%, respectively.",
+      "published": "2025-12-03T17:49:38+00:00",
+      "updated": "2025-12-03T17:49:38+00:00",
+      "categories": [
+        "cs.CL"
+      ],
+      "tags": [
+        "LLM Inference"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.04013v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.04013v1",
+      "found_date": "2025-12-04T16:34:56.962108"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03963v1",
+      "arxiv_id": "2512.03963v1",
+      "title": "TempR1: Improving Temporal Understanding of MLLMs via Temporal-Aware Multi-Task Reinforcement Learning",
+      "authors": [
+        "Tao Wu",
+        "Li Yang",
+        "Gen Zhan",
+        "Yiting Liao",
+        "Junlin Li",
+        "Deliang Fu",
+        "Li Zhang",
+        "Limin Wang"
+      ],
+      "summary": "Enhancing the temporal understanding of Multimodal Large Language Models (MLLMs) is essential for advancing long-form video analysis, enabling tasks such as temporal localization, action detection, and time-sensitive question answering. While reinforcement learning (RL) has recently been explored for improving temporal reasoning, existing approaches are often confined to limited task types and data, restricting their generalization across diverse temporal understanding scenarios. To address this challenge, we present TempR1, a temporal-aware multi-task reinforcement learning framework that systematically strengthens MLLMs' temporal comprehension. We curate a multi-task corpus that exposes the model to diverse temporal structures and semantics, and build upon the Group Relative Policy Optimization (GRPO) algorithm to achieve stable and effective cross-task optimization. Specifically, we categorize temporal tasks into three correspondence types between predicted intervals and ground-truth instances, and design tailored localization rewards for each, enabling TempR1 to capture fine-grained temporal dependencies and adapt to different temporal patterns. Extensive experiments demonstrate that TempR1 attains state-of-the-art performance across multiple benchmarks. Moreover, its joint optimization over complementary tasks yields a strong synergistic effect, enhancing both generalization and single-task performance, establishing a scalable and principled paradigm for temporal reasoning in MLLMs.",
+      "published": "2025-12-03T16:57:00+00:00",
+      "updated": "2025-12-03T16:57:00+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03963v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03963v1",
+      "found_date": "2025-12-04T16:35:00.246297"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03913v1",
+      "arxiv_id": "2512.03913v1",
+      "title": "Hierarchical Vision Language Action Model Using Success and Failure Demonstrations",
+      "authors": [
+        "Jeongeun Park",
+        "Jihwan Yoon",
+        "Byungwoo Jeon",
+        "Juhan Park",
+        "Jinwoo Shin",
+        "Namhoon Cho",
+        "Kyungjae Lee",
+        "Sangdoo Yun",
+        "Sungjoon Choi"
+      ],
+      "summary": "Prior Vision-Language-Action (VLA) models are typically trained on teleoperated successful demonstrations, while discarding numerous failed attempts that occur naturally during data collection. However, these failures encode where and how policies can be fragile, information that can be exploited to improve robustness. We address this problem by leveraging mixed-quality datasets to learn failure-aware reasoning at planning time. We introduce VINE, a hierarchical vision-language-action model that separates high-level reasoning (System 2) from low-level control (System 1) under a hierarchical reinforcement learning formalism, making failures usable as a structured learning signal rather than noisy supervision. System 2 performs feasibility-guided tree search over a 2D scene-graph abstraction: it proposes subgoal transitions, predicts success probabilities from both successes and failures, and prunes brittle branches before execution, effectively casting plan evaluation as feasibility scoring. The selected subgoal sequence is then passed to System 1, which executes low-level actions without modifying the agent's core skills. Trained entirely from offline teleoperation data, VINE integrates negative experience directly into the decision loop. Across challenging manipulation tasks, this approach consistently improves success rates and robustness, demonstrating that failure data is an essential resource for converting the broad competence of VLAs into robust execution.",
+      "published": "2025-12-03T15:58:38+00:00",
+      "updated": "2025-12-03T15:58:38+00:00",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03913v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03913v1",
+      "found_date": "2025-12-04T16:35:00.251915"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03911v1",
+      "arxiv_id": "2512.03911v1",
+      "title": "Autonomous Reinforcement Learning Robot Control with Intel's Loihi 2 Neuromorphic Hardware",
+      "authors": [
+        "Kenneth Stewart",
+        "Roxana Leontie",
+        "Samantha Chapin",
+        "Joe Hays",
+        "Sumit Bam Shrestha",
+        "Carl Glen Henshaw"
+      ],
+      "summary": "We present an end-to-end pipeline for deploying reinforcement learning (RL) trained Artificial Neural Networks (ANNs) on neuromorphic hardware by converting them into spiking Sigma-Delta Neural Networks (SDNNs). We demonstrate that an ANN policy trained entirely in simulation can be transformed into an SDNN compatible with Intel's Loihi 2 architecture, enabling low-latency and energy-efficient inference. As a test case, we use an RL policy for controlling the Astrobee free-flying robot, similar to a previously hardware in space-validated controller. The policy, trained with Rectified Linear Units (ReLUs), is converted to an SDNN and deployed on Intel's Loihi 2, then evaluated in NVIDIA's Omniverse Isaac Lab simulation environment for closed-loop control of Astrobee's motion. We compare execution performance between GPU and Loihi 2. The results highlight the feasibility of using neuromorphic platforms for robotic control and establish a pathway toward energy-efficient, real-time neuromorphic computation in future space and terrestrial robotics applications.",
+      "published": "2025-12-03T15:56:39+00:00",
+      "updated": "2025-12-03T15:56:39+00:00",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03911v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03911v1",
+      "found_date": "2025-12-04T16:35:00.253426"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03891v1",
+      "arxiv_id": "2512.03891v1",
+      "title": "Digital Twin-based Control Co-Design of Full Vehicle Active Suspensions via Deep Reinforcement Learning",
+      "authors": [
+        "Ying-Kuan Tsai",
+        "Yi-Ping Chen",
+        "Vispi Karkaria",
+        "Wei Chen"
+      ],
+      "summary": "Active suspension systems are critical for enhancing vehicle comfort, safety, and stability, yet their performance is often limited by fixed hardware designs and control strategies that cannot adapt to uncertain and dynamic operating conditions. Recent advances in digital twins (DTs) and deep reinforcement learning (DRL) offer new opportunities for real-time, data-driven optimization across a vehicle's lifecycle. However, integrating these technologies into a unified framework remains an open challenge. This work presents a DT-based control co-design (CCD) framework for full-vehicle active suspensions using multi-generation design concepts. By integrating automatic differentiation into DRL, we jointly optimize physical suspension components and control policies under varying driver behaviors and environmental uncertainties. DRL also addresses the challenge of partial observability, where only limited states can be sensed and fed back to the controller, by learning optimal control actions directly from available sensor information. The framework incorporates model updating with quantile learning to capture data uncertainty, enabling real-time decision-making and adaptive learning from digital-physical interactions. The approach demonstrates personalized optimization of suspension systems under two distinct driving settings (mild and aggressive). Results show that the optimized systems achieve smoother trajectories and reduce control efforts by approximately 43% and 52% for mild and aggressive, respectively, while maintaining ride comfort and stability. Contributions include: developing a DT-enabled CCD framework integrating DRL and uncertainty-aware model updating for full-vehicle active suspensions, introducing a multi-generation design strategy for self-improving systems, and demonstrating personalized optimization of active suspension systems for distinct driver types.",
+      "published": "2025-12-03T15:41:35+00:00",
+      "updated": "2025-12-03T15:41:35+00:00",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03891v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03891v1",
+      "found_date": "2025-12-04T16:35:00.256556"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03882v1",
+      "arxiv_id": "2512.03882v1",
+      "title": "Automatic Attack Discovery for Few-Shot Class-Incremental Learning via Large Language Models",
+      "authors": [
+        "Haidong Kang",
+        "Wei Wu",
+        "Hanling Wang"
+      ],
+      "summary": "Few-shot class incremental learning (FSCIL) is a more realistic and challenging paradigm in continual learning to incrementally learn unseen classes and overcome catastrophic forgetting on base classes with only a few training examples. Previous efforts have primarily centered around studying more effective FSCIL approaches. By contrast, less attention was devoted to thinking the security issues in contributing to FSCIL. This paper aims to provide a holistic study of the impact of attacks on FSCIL. We first derive insights by systematically exploring how human expert-designed attack methods (i.e., PGD, FGSM) affect FSCIL. We find that those methods either fail to attack base classes, or suffer from huge labor costs due to relying on huge expert knowledge. This highlights the need to craft a specialized attack method for FSCIL. Grounded in these insights, in this paper, we propose a simple yet effective ACraft method to automatically steer and discover optimal attack methods targeted at FSCIL by leveraging Large Language Models (LLMs) without human experts. Moreover, to improve the reasoning between LLMs and FSCIL, we introduce a novel Proximal Policy Optimization (PPO) based reinforcement learning to optimize learning, making LLMs generate better attack methods in the next generation by establishing positive feedback. Experiments on mainstream benchmarks show that our ACraft significantly degrades the performance of state-of-the-art FSCIL methods and dramatically beyond human expert-designed attack methods while maintaining the lowest costs of attack.",
+      "published": "2025-12-03T15:34:26+00:00",
+      "updated": "2025-12-03T15:34:26+00:00",
+      "categories": [
+        "cs.LG"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03882v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03882v1",
+      "found_date": "2025-12-04T16:35:03.654173"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03870v1",
+      "arxiv_id": "2512.03870v1",
+      "title": "Reconstructing KV Caches with Cross-layer Fusion For Enhanced Transformers",
+      "authors": [
+        "Hongzhan Lin",
+        "Zhiqi Bai",
+        "Xinmiao Zhang",
+        "Sen Yang",
+        "Xiang Li",
+        "Siran Yang",
+        "Yunlong Xu",
+        "Jiaheng Liu",
+        "Yongchi Zhao",
+        "Jiamang Wang",
+        "Yuchi Xu",
+        "Wenbo Su",
+        "Bo Zheng"
+      ],
+      "summary": "Transformer decoders have achieved strong results across tasks, but the memory required for the KV cache becomes prohibitive at long sequence lengths. Although Cross-layer KV Cache sharing (e.g., YOCO, CLA) offers a path to mitigate KV Cache bottleneck, it typically underperforms within-layer methods like GQA. To understand the root cause, we investigate the information flow of keys and values of the top-layers. Our preliminary reveals a clear distribution: values are predominantly derived from the bottom layer, while keys draw more information from both bottom and middle layers. Building upon this, we propose FusedKV, whose top-layer KV caches are a learnable fusion of the most informative ones from the bottom and middle layers. This fusion operates directly on post-RoPE keys, preserving relative positional information without the computational cost of re-applying rotary embeddings. To further improve efficiency, we propose FusedKV-Lite, an cross-layer sharing approach, where top-layer KV caches are directly derived from the bottom-layer values and the middle-layer keys. Compared to FusedKV, FusedKV-Lite reduces I/O overhead at the cost of a slight increase in perplexity. In experiments on LLMs ranging from 332M to 4B parameters, our proposed method reduce 50\\% cache memory while achieving lower validation perplexity than the standard Transformer decoder, establishing it as a memory-efficient, high-performance architectural alternative.",
+      "published": "2025-12-03T15:22:00+00:00",
+      "updated": "2025-12-03T15:22:00+00:00",
+      "categories": [
+        "cs.CL"
+      ],
+      "tags": [
+        "KV Cache"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03870v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03870v1",
+      "found_date": "2025-12-04T16:35:03.658167"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03847v1",
+      "arxiv_id": "2512.03847v1",
+      "title": "DVPO: Distributional Value Modeling-based Policy Optimization for LLM Post-Training",
+      "authors": [
+        "Dingwei Zhu",
+        "Zhiheng Xi",
+        "Shihan Dou",
+        "Yuhui Wang",
+        "Sixian Li",
+        "Junjie Ye",
+        "Honglin Guo",
+        "Shichun Liu",
+        "Chenhao Huang",
+        "Yajie Yang",
+        "Junlin Shang",
+        "Senjie Jin",
+        "Ming Zhang",
+        "Jiazheng Zhang",
+        "Caishuang Huang",
+        "Yunke Zhang",
+        "Demei Yan",
+        "Yuran Wang",
+        "Tao Gui"
+      ],
+      "summary": "Reinforcement learning (RL) has shown strong performance in LLM post-training, but real-world deployment often involves noisy or incomplete supervision. In such settings, complex and unreliable supervision signals can destabilize training and harm generalization. While existing approaches such as worst-case optimization (e.g., RFQI, CQL) and mean-based methods (e.g., PPO, GRPO) can improve stability, they often overlook generalization and may produce overly conservative policies, leading to uneven performance across diverse real scenarios. To this end, we introduce DVPO (Distributional Value Modeling with Risk-aware Policy Optimization), a new RL framework that combines conditional risk theory with distributional value modeling to better balance robustness and generalization. DVPO learns token-level value distributions to provide fine-grained supervision, and applies an asymmetric risk regularization to shape the distribution tails: it contracts the lower tail to dampen noisy negative deviations, while expanding the upper tail to preserve exploratory diversity. Across extensive experiments and analysis in multi-turn dialogue, math reasoning, and scientific QA, DVPO consistently outperforms PPO, GRPO, and robust Bellman-based PPO under noisy supervision, showing its potential for LLM post-training in the real-world.",
+      "published": "2025-12-03T14:48:38+00:00",
+      "updated": "2025-12-03T14:48:38+00:00",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03847v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03847v1",
+      "found_date": "2025-12-04T16:35:03.663579"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03835v1",
+      "arxiv_id": "2512.03835v1",
+      "title": "Multi-Agent Deep Reinforcement Learning for UAV-Assisted 5G Network Slicing: A Comparative Study of MAPPO, MADDPG, and MADQN",
+      "authors": [
+        "Ghoshana Bista",
+        "Abbas Bradai",
+        "Emmanuel Moulay",
+        "Abdulhalim Dandoush"
+      ],
+      "summary": "The growing demand for robust, scalable wireless networks in the 5G-and-beyond era has led to the deployment of Unmanned Aerial Vehicles (UAVs) as mobile base stations to enhance coverage in dense urban and underserved rural areas. This paper presents a Multi-Agent Deep Reinforcement Learning (MADRL) framework that integrates Proximal Policy Optimization (MAPPO), Multi-Agent Deep Deterministic Policy Gradient (MADDPG), and Multi-Agent Deep Q-Networks (MADQN) to jointly optimize UAV positioning, resource allocation, Quality of Service (QoS), and energy efficiency through 5G network slicing. The framework adopts Centralized Training with Decentralized Execution (CTDE), enabling autonomous real-time decision-making while preserving global coordination. Users are prioritized into Premium (A), Silver (B), and Bronze (C) slices with distinct QoS requirements. Experiments in realistic urban and rural scenarios show that MAPPO achieves the best overall QoS-energy tradeoff, especially in interference-rich environments; MADDPG offers more precise continuous control and can attain slightly higher SINR in open rural settings at the cost of increased energy usage; and MADQN provides a computationally efficient baseline for discretized action spaces. These findings demonstrate that no single MARL algorithm is universally dominant; instead, algorithm suitability depends on environmental topology, user density, and service requirements. The proposed framework highlights the potential of MARL-driven UAV systems to enhance scalability, reliability, and differentiated QoS delivery in next-generation wireless networks.",
+      "published": "2025-12-03T14:35:56+00:00",
+      "updated": "2025-12-03T14:35:56+00:00",
+      "categories": [
+        "eess.SY"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03835v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03835v1",
+      "found_date": "2025-12-04T16:35:03.665793"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03829v1",
+      "arxiv_id": "2512.03829v1",
+      "title": "First Experimental Demonstration of Machine Learning-Based Tuning on the PSI Injector 2 Cyclotron",
+      "authors": [
+        "M. Haj Tahar",
+        "W. Joho",
+        "E. Solodko",
+        "M. Bocchio",
+        "S. Marquie",
+        "M. Busch",
+        "A. Barchetti",
+        "J. Grillenberger",
+        "J. Snuverink",
+        "M. Schneider"
+      ],
+      "summary": "Reliable operation of high-power proton cyclotrons is a critical requirement for Accelerator Driven Systems (ADS) and other large-scale applications. Beam tuning in such machines is traditionally performed manually, a process that can be slow, non-optimal, and difficult to execute in the presence of faults or changing conditions. To address this, we developed and deployed a machine learning (ML) based tuning framework on the Injector 2 cyclotron at PSI, chosen as an ideal testbed for high-power operation. The system combined a tailored reinforcement learning algorithm with real-time diagnostics and control, and incorporated accelerator-physics inspired adaptations such as an overshoot strategy that reduced magnetic field settling times by nearly a factor of six. Over an extensive 12-day operational test campaign, relatively long in the context of real-time ML experiments, the ML agent successfully tuned the machine across multiple operating points, achieving convergence within hours and maintaining stable beam extraction with reduced losses. Beyond initial tuning, the system was also operated in evaluation mode overnight, where it autonomously monitored and corrected the machine to compensate for drifts, demonstrating robustness and long-term stability. Crucially, the learned policy generalized reliably from low-current training to higher-current operation, underscoring its scalability. These results constitute the first demonstration of ML-assisted tuning on a high-power cyclotron, with direct relevance to ADS-class drivers.",
+      "published": "2025-12-03T14:21:39+00:00",
+      "updated": "2025-12-03T14:21:39+00:00",
+      "categories": [
+        "physics.acc-ph",
+        "hep-ex"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03829v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03829v1",
+      "found_date": "2025-12-04T16:35:03.668173"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03805v1",
+      "arxiv_id": "2512.03805v1",
+      "title": "Deep Reinforcement Learning for Dynamic Algorithm Configuration: A Case Study on Optimizing OneMax with the (1+($λ$,$λ$))-GA",
+      "authors": [
+        "Tai Nguyen",
+        "Phong Le",
+        "André Biedenkapp",
+        "Carola Doerr",
+        "Nguyen Dang"
+      ],
+      "summary": "Dynamic Algorithm Configuration (DAC) studies the efficient identification of control policies for parameterized optimization algorithms. Numerous studies have leveraged the robustness of decision-making in Reinforcement Learning (RL) to address the optimization challenges in algorithm configuration. However, applying RL to DAC is challenging and often requires extensive domain expertise. We conduct a comprehensive study of deep-RL algorithms in DAC through a systematic analysis of controlling the population size parameter of the (1+($λ$,$λ$))-GA on OneMax instances. Our investigation of DDQN and PPO reveals two fundamental challenges that limit their effectiveness in DAC: scalability degradation and learning instability. We trace these issues to two primary causes: under-exploration and planning horizon coverage, each of which can be effectively addressed through targeted solutions. To address under-exploration, we introduce an adaptive reward shifting mechanism that leverages reward distribution statistics to enhance DDQN agent exploration, eliminating the need for instance-specific hyperparameter tuning and ensuring consistent effectiveness across different problem scales. In dealing with the planning horizon coverage problem, we demonstrate that undiscounted learning effectively resolves it in DDQN, while PPO faces fundamental variance issues that necessitate alternative algorithmic designs. We further analyze the hyperparameter dependencies of PPO, showing that while hyperparameter optimization enhances learning stability, it consistently falls short in identifying effective policies across various configurations. Finally, we demonstrate that DDQN equipped with our adaptive reward shifting strategy achieves performance comparable to theoretically derived policies with vastly improved sample efficiency, outperforming prior DAC approaches by several orders of magnitude.",
+      "published": "2025-12-03T13:54:41+00:00",
+      "updated": "2025-12-03T13:54:41+00:00",
+      "categories": [
+        "cs.LG"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03805v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03805v1",
+      "found_date": "2025-12-04T16:35:03.673177"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03795v1",
+      "arxiv_id": "2512.03795v1",
+      "title": "MPCFormer: A physics-informed data-driven approach for explainable socially-aware autonomous driving",
+      "authors": [
+        "Jia Hu",
+        "Zhexi Lian",
+        "Xuerun Yan",
+        "Ruiang Bi",
+        "Dou Shen",
+        "Yu Ruan",
+        "Haoran Wang"
+      ],
+      "summary": "Autonomous Driving (AD) vehicles still struggle to exhibit human-like behavior in highly dynamic and interactive traffic scenarios. The key challenge lies in AD's limited ability to interact with surrounding vehicles, largely due to a lack of understanding the underlying mechanisms of social interaction. To address this issue, we introduce MPCFormer, an explainable socially-aware autonomous driving approach with physics-informed and data-driven coupled social interaction dynamics. In this model, the dynamics are formulated into a discrete space-state representation, which embeds physics priors to enhance modeling explainability. The dynamics coefficients are learned from naturalistic driving data via a Transformer-based encoder-decoder architecture. To the best of our knowledge, MPCFormer is the first approach to explicitly model the dynamics of multi-vehicle social interactions. The learned social interaction dynamics enable the planner to generate manifold, human-like behaviors when interacting with surrounding traffic. By leveraging the MPC framework, the approach mitigates the potential safety risks typically associated with purely learning-based methods. Open-looped evaluation on NGSIM dataset demonstrates that MPCFormer achieves superior social interaction awareness, yielding the lowest trajectory prediction errors compared with other state-of-the-art approach. The prediction achieves an ADE as low as 0.86 m over a long prediction horizon of 5 seconds. Close-looped experiments in highly intense interaction scenarios, where consecutive lane changes are required to exit an off-ramp, further validate the effectiveness of MPCFormer. Results show that MPCFormer achieves the highest planning success rate of 94.67%, improves driving efficiency by 15.75%, and reduces the collision rate from 21.25% to 0.5%, outperforming a frontier Reinforcement Learning (RL) based planner.",
+      "published": "2025-12-03T13:43:33+00:00",
+      "updated": "2025-12-03T13:43:33+00:00",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03795v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03795v1",
+      "found_date": "2025-12-04T16:35:03.675356"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03794v1",
+      "arxiv_id": "2512.03794v1",
+      "title": "AdaptVision: Efficient Vision-Language Models via Adaptive Visual Acquisition",
+      "authors": [
+        "Zichuan Lin",
+        "Yicheng Liu",
+        "Yang Yang",
+        "Lvfang Tao",
+        "Deheng Ye"
+      ],
+      "summary": "Vision-Language Models (VLMs) have achieved remarkable success in visual question answering tasks, but their reliance on large numbers of visual tokens introduces significant computational overhead. While existing efficient VLM approaches reduce visual tokens through fixed-ratio compression, they operate passively and lack the ability to adapt to varying task requirements. This motivates a fundamental question: Can VLMs autonomously determine the minimum number of visual tokens required for each sample? Inspired by human active vision mechanisms, we introduce AdaptVision, an efficient VLM paradigm that enables adaptive visual token acquisition through a coarse-to-fine approach. Our model initially processes compressed visual tokens from low-resolution images and selectively acquires additional visual information by invoking a bounding box tool to crop key regions when necessary. We train AdaptVision using a reinforcement learning framework that carefully balances accuracy and efficiency. Central to our approach is Decoupled Turn Policy Optimization (DTPO), which decouples the learning objective into two components: (1) tool learning, which optimizes correct tool utilization, and (2) accuracy improvement, which refines the generated responses to improve answer correctness. Based on this formulation, we further decouple advantage estimation by computing separate advantages for tokens associated with each objective. This formulation enables more effective optimization for AdaptVision compared to vanilla GRPO. Comprehensive experiments across multiple VQA benchmarks demonstrate that AdaptVision achieves superior performance while consuming substantially fewer visual tokens than state-of-the-art efficient VLM methods.",
+      "published": "2025-12-03T13:43:30+00:00",
+      "updated": "2025-12-03T13:43:30+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03794v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03794v1",
+      "found_date": "2025-12-04T16:35:03.676367"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03783v1",
+      "arxiv_id": "2512.03783v1",
+      "title": "Omni-AutoThink: Adaptive Multimodal Reasoning via Reinforcement Learning",
+      "authors": [
+        "Dongchao Yang",
+        "Songxiang Liu",
+        "Disong Wang",
+        "Yuanyuan Wang",
+        "Guanglu Wan",
+        "Helen Meng"
+      ],
+      "summary": "Recent advances in Omni models have enabled unified multimodal perception and generation. However, most existing systems still exhibit rigid reasoning behaviors, either overthinking simple problems or failing to reason when necessary. To address this limitation, we propose Omni-AutoThink, a novel adaptive reasoning framework that dynamically adjusts the model's reasoning depth according to task difficulty. Our framework comprises two stages: (1) an Adaptive Supervised Fine-Tuning (Adaptive SFT) stage, which endows the Omni model with fundamental reasoning capability using large-scale reasoning-augmented data, and (2) an Adaptive Reinforcement Learning (Adaptive GRPO) stage, which optimizes reasoning behaviors based on task complexity and reward feedback. We further construct a comprehensive adaptive reasoning benchmark that spans text-only, text-audio, text-visual, and text-audio-visual modalities, providing both training and evaluation splits for multimodal reasoning assessment. Experimental results demonstrate that our proposed framework significantly improves adaptive reasoning performance compared to previous baselines. All benchmark data and code will be publicly released.",
+      "published": "2025-12-03T13:33:28+00:00",
+      "updated": "2025-12-03T13:33:28+00:00",
+      "categories": [
+        "cs.AI",
+        "cs.SD"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03783v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03783v1",
+      "found_date": "2025-12-04T16:35:06.943160"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03764v1",
+      "arxiv_id": "2512.03764v1",
+      "title": "Sample-Efficient Model-Free Policy Gradient Methods for Stochastic LQR via Robust Linear Regression",
+      "authors": [
+        "Bowen Song",
+        "Sebastien Gros",
+        "Andrea Iannelli"
+      ],
+      "summary": "Policy gradient algorithms are widely used in reinforcement learning and belong to the class of approximate dynamic programming methods. This paper studies two key policy gradient algorithms - the Natural Policy Gradient and the Gauss-Newton Method - for solving the Linear Quadratic Regulator (LQR) problem in unknown stochastic linear systems. The main challenge lies in obtaining an unbiased gradient estimate from noisy data due to errors-in-variables in linear regression. This issue is addressed by employing a primal-dual estimation procedure. Using this novel gradient estimation scheme, the paper establishes convergence guarantees with a sample complexity of order O(1/epsilon). Theoretical results are further supported by numerical experiments, which demonstrate the effectiveness of the proposed algorithms.",
+      "published": "2025-12-03T13:13:35+00:00",
+      "updated": "2025-12-03T13:13:35+00:00",
+      "categories": [
+        "eess.SY"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03764v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03764v1",
+      "found_date": "2025-12-04T16:35:06.946678"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03759v1",
+      "arxiv_id": "2512.03759v1",
+      "title": "Principled RL for Diffusion LLMs Emerges from a Sequence-Level Perspective",
+      "authors": [
+        "Jingyang Ou",
+        "Jiaqi Han",
+        "Minkai Xu",
+        "Shaoxuan Xu",
+        "Jianwen Xie",
+        "Stefano Ermon",
+        "Yi Wu",
+        "Chongxuan Li"
+      ],
+      "summary": "Reinforcement Learning (RL) has proven highly effective for autoregressive language models, but adapting these methods to diffusion large language models (dLLMs) presents fundamental challenges. The core difficulty lies in likelihood approximation: while autoregressive models naturally provide token-level conditional probabilities essential for token-level RL objectives (e.g., GRPO), dLLMs generate sequences through iterative non-autoregressive denoising steps that lack this factorization. To address this fundamental mismatch, we propose ELBO-based Sequence-level Policy Optimization (ESPO), a principled RL framework that treats entire sequence generation as a single action and uses the ELBO as a tractable sequence-level likelihood proxy. Our method incorporates per-token normalization of importance ratios and robust KL-divergence estimation to ensure stable large-scale training. Extensive experiments on mathematical reasoning, coding, and planning tasks demonstrate that ESPO significantly outperforms token-level baselines, achieving dramatic improvements of 20-40 points on the Countdown task, while maintaining consistent gains on math and coding benchmarks. Our approach establishes sequence-level optimization as a principled and empirically effective paradigm for RL in dLLMs. Our code is available at https://github.com/ML-GSAI/ESPO.",
+      "published": "2025-12-03T13:05:32+00:00",
+      "updated": "2025-12-03T13:05:32+00:00",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03759v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03759v1",
+      "found_date": "2025-12-04T16:35:06.948678"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03746v1",
+      "arxiv_id": "2512.03746v1",
+      "title": "Thinking with Programming Vision: Towards a Unified View for Thinking with Images",
+      "authors": [
+        "Zirun Guo",
+        "Minjie Hong",
+        "Feng Zhang",
+        "Kai Jia",
+        "Tao Jin"
+      ],
+      "summary": "Multimodal large language models (MLLMs) that think with images can interactively use tools to reason about visual inputs, but current approaches often rely on a narrow set of tools with limited real-world necessity and scalability. In this work, we first reveal a critical and previously overlooked weakness: even state-of-the-art MLLMs are surprisingly brittle, showing significant performance degradation on images with simple orientation changes or natural corruptions, underscoring the need for more robust tool-based reasoning. To address this, we propose CodeVision, a flexible and scalable code-as-tool framework where the model generates code as a universal interface to invoke any image operation, moving beyond fixed tool registries. We train our model using a two-stage methodology, beginning with Supervised Fine-Tuning (SFT) on a high-quality dataset curated for complex, multi-turn tool composition and error recovery, followed by Reinforcement Learning (RL) with a novel and dense process reward function to encourage strategic and efficient tool use. To facilitate this research, we construct new SFT and RL datasets and introduce a challenging new benchmark suite designed to rigorously evaluate robustness to orientation changes and multi-tool reasoning. Experiments on Qwen2.5-VL and Qwen3-VL series show that our approach significantly improves model performance and fosters emergent capabilities such as flexible tool composition, efficient chained execution, and robust error recovery from runtime feedback. Code is available at https://github.com/ByteDance-BandAI/CodeVision.",
+      "published": "2025-12-03T12:44:15+00:00",
+      "updated": "2025-12-03T12:44:15+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03746v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03746v1",
+      "found_date": "2025-12-04T16:35:06.950679"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03736v1",
+      "arxiv_id": "2512.03736v1",
+      "title": "Crossing the Sim2Real Gap Between Simulation and Ground Testing to Space Deployment of Autonomous Free-flyer Control",
+      "authors": [
+        "Kenneth Stewart",
+        "Samantha Chapin",
+        "Roxana Leontie",
+        "Carl Glen Henshaw"
+      ],
+      "summary": "Reinforcement learning (RL) offers transformative potential for robotic control in space. We present the first on-orbit demonstration of RL-based autonomous control of a free-flying robot, the NASA Astrobee, aboard the International Space Station (ISS). Using NVIDIA's Omniverse physics simulator and curriculum learning, we trained a deep neural network to replace Astrobee's standard attitude and translation control, enabling it to navigate in microgravity. Our results validate a novel training pipeline that bridges the simulation-to-reality (Sim2Real) gap, utilizing a GPU-accelerated, scientific-grade simulation environment for efficient Monte Carlo RL training. This successful deployment demonstrates the feasibility of training RL policies terrestrially and transferring them to space-based applications. This paves the way for future work in In-Space Servicing, Assembly, and Manufacturing (ISAM), enabling rapid on-orbit adaptation to dynamic mission requirements.",
+      "published": "2025-12-03T12:33:35+00:00",
+      "updated": "2025-12-03T12:33:35+00:00",
+      "categories": [
+        "cs.RO",
+        "cs.LG",
+        "eess.SY"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03736v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03736v1",
+      "found_date": "2025-12-04T16:35:06.953184"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03729v1",
+      "arxiv_id": "2512.03729v1",
+      "title": "Autonomous Planning In-space Assembly Reinforcement-learning free-flYer (APIARY) International Space Station Astrobee Testing",
+      "authors": [
+        "Samantha Chapin",
+        "Kenneth Stewart",
+        "Roxana Leontie",
+        "Carl Glen Henshaw"
+      ],
+      "summary": "The US Naval Research Laboratory's (NRL's) Autonomous Planning In-space Assembly Reinforcement-learning free-flYer (APIARY) experiment pioneers the use of reinforcement learning (RL) for control of free-flying robots in the zero-gravity (zero-G) environment of space. On Tuesday, May 27th 2025 the APIARY team conducted the first ever, to our knowledge, RL control of a free-flyer in space using the NASA Astrobee robot on-board the International Space Station (ISS). A robust 6-degrees of freedom (DOF) control policy was trained using an actor-critic Proximal Policy Optimization (PPO) network within the NVIDIA Isaac Lab simulation environment, randomizing over goal poses and mass distributions to enhance robustness. This paper details the simulation testing, ground testing, and flight validation of this experiment. This on-orbit demonstration validates the transformative potential of RL for improving robotic autonomy, enabling rapid development and deployment (in minutes to hours) of tailored behaviors for space exploration, logistics, and real-time mission needs.",
+      "published": "2025-12-03T12:16:52+00:00",
+      "updated": "2025-12-03T12:16:52+00:00",
+      "categories": [
+        "cs.RO",
+        "cs.LG",
+        "eess.SY"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03729v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03729v1",
+      "found_date": "2025-12-04T16:35:06.955709"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03722v1",
+      "arxiv_id": "2512.03722v1",
+      "title": "Tutorial on Large Language Model-Enhanced Reinforcement Learning for Wireless Networks",
+      "authors": [
+        "Lingyi Cai",
+        "Wenjie Fu",
+        "Yuxi Huang",
+        "Ruichen Zhang",
+        "Yinqiu Liu",
+        "Jiawen Kang",
+        "Zehui Xiong",
+        "Tao Jiang",
+        "Dusit Niyato",
+        "Xianbin Wang",
+        "Shiwen Mao",
+        "Xuemin Shen"
+      ],
+      "summary": "Reinforcement Learning (RL) has shown remarkable success in enabling adaptive and data-driven optimization for various applications in wireless networks. However, classical RL suffers from limitations in generalization, learning feedback, interpretability, and sample efficiency in dynamic wireless environments. Large Language Models (LLMs) have emerged as a transformative Artificial Intelligence (AI) paradigm with exceptional capabilities in knowledge generalization, contextual reasoning, and interactive generation, which have demonstrated strong potential to enhance classical RL. This paper serves as a comprehensive tutorial on LLM-enhanced RL for wireless networks. We propose a taxonomy to categorize the roles of LLMs into four critical functions: state perceiver, reward designer, decision-maker, and generator. Then, we review existing studies exploring how each role of LLMs enhances different stages of the RL pipeline. Moreover, we provide a series of case studies to illustrate how to design and apply LLM-enhanced RL in low-altitude economy networking, vehicular networks, and space-air-ground integrated networks. Finally, we conclude with a discussion on potential future directions for LLM-enhanced RL and offer insights into its future development in wireless networks.",
+      "published": "2025-12-03T12:13:43+00:00",
+      "updated": "2025-12-03T12:13:43+00:00",
+      "categories": [
+        "cs.NI"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03722v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03722v1",
+      "found_date": "2025-12-04T16:35:06.957718"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03707v1",
+      "arxiv_id": "2512.03707v1",
+      "title": "ContactRL: Safe Reinforcement Learning based Motion Planning for Contact based Human Robot Collaboration",
+      "authors": [
+        "Sundas Rafat Mulkana",
+        "Ronyu Yu",
+        "Tanaya Guha",
+        "Emma Li"
+      ],
+      "summary": "In collaborative human-robot tasks, safety requires not only avoiding collisions but also ensuring safe, intentional physical contact. We present ContactRL, a reinforcement learning (RL) based framework that directly incorporates contact safety into the reward function through force feedback. This enables a robot to learn adaptive motion profiles that minimize human-robot contact forces while maintaining task efficiency. In simulation, ContactRL achieves a low safety violation rate of 0.2\\% with a high task success rate of 87.7\\%, outperforming state-of-the-art constrained RL baselines. In order to guarantee deployment safety, we augment the learned policy with a kinetic energy based Control Barrier Function (eCBF) shield. Real-world experiments on an UR3e robotic platform performing small object handovers from a human hand across 360 trials confirm safe contact, with measured normal forces consistently below 10N. These results demonstrate that ContactRL enables safe and efficient physical collaboration, thereby advancing the deployment of collaborative robots in contact-rich tasks.",
+      "published": "2025-12-03T11:57:53+00:00",
+      "updated": "2025-12-03T11:57:53+00:00",
+      "categories": [
+        "cs.RO"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03707v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03707v1",
+      "found_date": "2025-12-04T16:35:06.961728"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03641v1",
+      "arxiv_id": "2512.03641v1",
+      "title": "A Descriptive Model for Modelling Attacker Decision-Making in Cyber-Deception",
+      "authors": [
+        "B. R. Turner",
+        "O. Guidetti",
+        "N. M. Karie",
+        "R. Ryan",
+        "Y. Yan"
+      ],
+      "summary": "Cyber-deception is an increasingly important defensive strategy, shaping adversarial decision making through controlled misinformation, uncertainty, and misdirection. Although game-theoretic, Bayesian, Markov decision process, and reinforcement learning models offer insight into deceptive interactions, they typically assume an attacker has already chosen to engage. Such approaches overlook cognitive and perceptual factors that influence an attacker's initial decision to engage or withdraw. This paper presents a descriptive model that incorporates the psychological and strategic elements shaping this decision. The model defines five components, belief (B), scepticism (S), deception fidelity (D), reconnaissance (R), and experience (E), which interact to capture how adversaries interpret deceptive cues and assess whether continued engagement is worthwhile. The framework provides a structured method for analysing engagement decisions in cyber-deception scenarios. A series of experiments has been designed to evaluate this model through Capture the Flag activities incorporating varying levels of deception, supported by behavioural and biometric observations. These experiments have not yet been conducted, and no experimental findings are presented in this paper. These experiments will combine behavioural observations with biometric indicators to produce a multidimensional view of adversarial responses. Findings will improve understanding of the factors influencing engagement decisions and refine the model's relevance to real-world cyber-deception settings. By addressing the gap in existing models that presume engagement, this work supports more cognitively realistic and strategically effective cyber-deception practices.",
+      "published": "2025-12-03T10:23:33+00:00",
+      "updated": "2025-12-03T10:23:33+00:00",
+      "categories": [
+        "cs.CR"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03641v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03641v1",
+      "found_date": "2025-12-04T16:35:10.206546"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03621v1",
+      "arxiv_id": "2512.03621v1",
+      "title": "ReCamDriving: LiDAR-Free Camera-Controlled Novel Trajectory Video Generation",
+      "authors": [
+        "Yaokun Li",
+        "Shuaixian Wang",
+        "Mantang Guo",
+        "Jiehui Huang",
+        "Taojun Ding",
+        "Mu Hu",
+        "Kaixuan Wang",
+        "Shaojie Shen",
+        "Guang Tan"
+      ],
+      "summary": "We propose ReCamDriving, a purely vision-based, camera-controlled novel-trajectory video generation framework. While repair-based methods fail to restore complex artifacts and LiDAR-based approaches rely on sparse and incomplete cues, ReCamDriving leverages dense and scene-complete 3DGS renderings for explicit geometric guidance, achieving precise camera-controllable generation. To mitigate overfitting to restoration behaviors when conditioned on 3DGS renderings, ReCamDriving adopts a two-stage training paradigm: the first stage uses camera poses for coarse control, while the second stage incorporates 3DGS renderings for fine-grained viewpoint and geometric guidance. Furthermore, we present a 3DGS-based cross-trajectory data curation strategy to eliminate the train-test gap in camera transformation patterns, enabling scalable multi-trajectory supervision from monocular videos. Based on this strategy, we construct the ParaDrive dataset, containing over 110K parallel-trajectory video pairs. Extensive experiments demonstrate that ReCamDriving achieves state-of-the-art camera controllability and structural consistency.",
+      "published": "2025-12-03T09:55:25+00:00",
+      "updated": "2025-12-03T09:55:25+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "Video Generation (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03621v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03621v1",
+      "found_date": "2025-12-04T16:35:10.213171"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03619v1",
+      "arxiv_id": "2512.03619v1",
+      "title": "LAMP: Language-Assisted Motion Planning for Controllable Video Generation",
+      "authors": [
+        "Muhammed Burak Kizil",
+        "Enes Sanli",
+        "Niloy J. Mitra",
+        "Erkut Erdem",
+        "Aykut Erdem",
+        "Duygu Ceylan"
+      ],
+      "summary": "Video generation has achieved remarkable progress in visual fidelity and controllability, enabling conditioning on text, layout, or motion. Among these, motion control - specifying object dynamics and camera trajectories - is essential for composing complex, cinematic scenes, yet existing interfaces remain limited. We introduce LAMP that leverages large language models (LLMs) as motion planners to translate natural language descriptions into explicit 3D trajectories for dynamic objects and (relatively defined) cameras. LAMP defines a motion domain-specific language (DSL), inspired by cinematography conventions. By harnessing program synthesis capabilities of LLMs, LAMP generates structured motion programs from natural language, which are deterministically mapped to 3D trajectories. We construct a large-scale procedural dataset pairing natural text descriptions with corresponding motion programs and 3D trajectories. Experiments demonstrate LAMP's improved performance in motion controllability and alignment with user intent compared to state-of-the-art alternatives establishing the first framework for generating both object and camera motions directly from natural language specifications.",
+      "published": "2025-12-03T09:51:13+00:00",
+      "updated": "2025-12-03T09:51:13+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "Video Generation (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03619v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03619v1",
+      "found_date": "2025-12-04T16:35:10.215116"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03608v1",
+      "arxiv_id": "2512.03608v1",
+      "title": "KVNAND: Efficient On-Device Large Language Model Inference Using DRAM-Free In-Flash Computing",
+      "authors": [
+        "Lishuo Deng",
+        "Shaojie Xu",
+        "Jinwu Chen",
+        "Changwei Yan",
+        "Jiajie Wang",
+        "Zhe Jiang",
+        "Weiwei Shan"
+      ],
+      "summary": "Deploying large language models (LLMs) on edge devices enables personalized agents with strong privacy and low cost. However, with tens to hundreds of billions of parameters, single-batch autoregressive inference suffers from extremely low arithmetic intensity, creating severe weight-loading and bandwidth pressures on resource-constrained platforms. Recent in-flash computing (IFC) solutions alleviate this bottleneck by co-locating weight-related linear computations in the decode phase with flash, yet still rely on DRAM for the key-value (KV) cache. As context length grows, the KV cache can exceed model weights in size, imposing prohibitive DRAM cost and capacity requirements. Attempts to offload KV cache to flash suffer from severe performance penalties.\n  We propose KVNAND, the first DRAM-free, IFC-based architecture that stores both model weights and KV cache entirely in compute-enabled 3D NAND flash. KVNAND addresses the fundamental performance challenges of flash under intensive KV cache access by leveraging IFC for all memory-bound operations to reduce data transfer overhead, introducing head-group parallelism to boost throughput, and employing page-level KV cache mapping to align token access patterns with flash organization. In addition, we propose a design space exploration framework that evaluates discrete and compact KVNAND variants to balance weight and KV placement, automatically identifying the optimal design trade-off. These techniques mitigate latency, energy, and reliability concerns, turning flash into a practical medium for long-context KV storage. Evaluations on MHA 7B and GQA 70B LLMs show that KVNAND achieves 1.98\\(\\times\\)/1.94\\(\\times\\)/2.05\\(\\times\\) geomean speedup at 128/1K/10K-token contexts compared to DRAM-equipped IFC designs and addresses out-of-memory failures at 100K context length.",
+      "published": "2025-12-03T09:41:03+00:00",
+      "updated": "2025-12-03T09:41:03+00:00",
+      "categories": [
+        "cs.AR",
+        "cs.AI",
+        "cs.ET"
+      ],
+      "tags": [
+        "KV Cache",
+        "LLM Inference"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03608v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03608v1",
+      "found_date": "2025-12-04T16:35:10.217651"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03594v1",
+      "arxiv_id": "2512.03594v1",
+      "title": "Accelerating Detailed Routing Convergence through Offline Reinforcement Learning",
+      "authors": [
+        "Afsara Khan",
+        "Austin Rovinski"
+      ],
+      "summary": "Detailed routing remains one of the most complex and time-consuming steps in modern physical design due to the challenges posed by shrinking feature sizes and stricter design rules. Prior detailed routers achieve state-of-the-art results by leveraging iterative pathfinding algorithms to route each net. However, runtimes are a major issue in detailed routers, as converging to a solution with zero design rule violations (DRVs) can be prohibitively expensive.\n  In this paper, we propose leveraging reinforcement learning (RL) to enable rapid convergence in detailed routing by learning from previous designs. We make the key observation that prior detailed routers statically schedule the cost weights used in their routing algorithms, meaning they do not change in response to the design or technology. By training a conservative Q-learning (CQL) model to dynamically select the routing cost weights which minimize the number of algorithm iterations, we find that our work completes the ISPD19 benchmarks with 1.56x average and up to 3.01x faster runtime than the baseline router while maintaining or improving the DRV count in all cases. We also find that this learning shows signs of generalization across technologies, meaning that learning designs in one technology can translate to improved outcomes in other technologies.",
+      "published": "2025-12-03T09:25:39+00:00",
+      "updated": "2025-12-03T09:25:39+00:00",
+      "categories": [
+        "cs.AR"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03594v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03594v1",
+      "found_date": "2025-12-04T16:35:10.221314"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03556v1",
+      "arxiv_id": "2512.03556v1",
+      "title": "RoboScape-R: Unified Reward-Observation World Models for Generalizable Robotics Training via RL",
+      "authors": [
+        "Yinzhou Tang",
+        "Yu Shang",
+        "Yinuo Chen",
+        "Bingwen Wei",
+        "Xin Zhang",
+        "Shu'ang Yu",
+        "Liangzhi Shi",
+        "Chao Yu",
+        "Chen Gao",
+        "Wei Wu",
+        "Yong Li"
+      ],
+      "summary": "Achieving generalizable embodied policies remains a key challenge. Traditional policy learning paradigms, including both Imitation Learning (IL) and Reinforcement Learning (RL), struggle to cultivate generalizability across diverse scenarios. While IL policies often overfit to specific expert trajectories, RL suffers from the inherent lack of a unified and general reward signal necessary for effective multi-scene generalization. We posit that the world model is uniquely capable of serving as a universal environment proxy to address this limitation. However, current world models primarily focus on their ability to predict observations and still rely on task-specific, handcrafted reward functions, thereby failing to provide a truly general training environment. Toward this problem, we propose RoboScape-R, a framework leveraging the world model to serve as a versatile, general-purpose proxy for the embodied environment within the RL paradigm. We introduce a novel world model-based general reward mechanism that generates ''endogenous'' rewards derived from the model's intrinsic understanding of real-world state transition dynamics. Extensive experiments demonstrate that RoboScape-R effectively addresses the limitations of traditional RL methods by providing an efficient and general training environment that substantially enhances the generalization capability of embodied policies. Our approach offers critical insights into utilizing the world model as an online training strategy and achieves an average 37.5% performance improvement over baselines under out-of-domain scenarios.",
+      "published": "2025-12-03T08:24:16+00:00",
+      "updated": "2025-12-03T08:24:16+00:00",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03556v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03556v1",
+      "found_date": "2025-12-04T16:35:13.591633"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03528v1",
+      "arxiv_id": "2512.03528v1",
+      "title": "Multi-Agent Reinforcement Learning with Communication-Constrained Priors",
+      "authors": [
+        "Guang Yang",
+        "Tianpei Yang",
+        "Jingwen Qiao",
+        "Yanqing Wu",
+        "Jing Huo",
+        "Xingguo Chen",
+        "Yang Gao"
+      ],
+      "summary": "Communication is one of the effective means to improve the learning of cooperative policy in multi-agent systems. However, in most real-world scenarios, lossy communication is a prevalent issue. Existing multi-agent reinforcement learning with communication, due to their limited scalability and robustness, struggles to apply to complex and dynamic real-world environments. To address these challenges, we propose a generalized communication-constrained model to uniformly characterize communication conditions across different scenarios. Based on this, we utilize it as a learning prior to distinguish between lossy and lossless messages for specific scenarios. Additionally, we decouple the impact of lossy and lossless messages on distributed decision-making, drawing on a dual mutual information estimatior, and introduce a communication-constrained multi-agent reinforcement learning framework, quantifying the impact of communication messages into the global reward. Finally, we validate the effectiveness of our approach across several communication-constrained benchmarks.",
+      "published": "2025-12-03T07:35:07+00:00",
+      "updated": "2025-12-03T07:35:07+00:00",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03528v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03528v1",
+      "found_date": "2025-12-04T16:35:13.598184"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03525v1",
+      "arxiv_id": "2512.03525v1",
+      "title": "Adaptive sampling using variational autoencoder and reinforcement learning",
+      "authors": [
+        "Adil Rasheed",
+        "Mikael Aleksander Jansen Shahly",
+        "Muhammad Faisal Aftab"
+      ],
+      "summary": "Compressed sensing enables sparse sampling but relies on generic bases and random measurements, limiting efficiency and reconstruction quality. Optimal sensor placement uses historcal data to design tailored sampling patterns, yet its fixed, linear bases cannot adapt to nonlinear or sample-specific variations. Generative model-based compressed sensing improves reconstruction using deep generative priors but still employs suboptimal random sampling. We propose an adaptive sparse sensing framework that couples a variational autoencoder prior with reinforcement learning to select measurements sequentially. Experiments show that this approach outperforms CS, OSP, and Generative model-based reconstruction from sparse measurements.",
+      "published": "2025-12-03T07:32:25+00:00",
+      "updated": "2025-12-03T07:32:25+00:00",
+      "categories": [
+        "cs.LG"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03525v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03525v1",
+      "found_date": "2025-12-04T16:35:13.599158"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03459v1",
+      "arxiv_id": "2512.03459v1",
+      "title": "Variable-Impedance Muscle Coordination under Slow-Rate Control Frequencies and Limited Observation Conditions Evaluated through Legged Locomotion",
+      "authors": [
+        "Hidaka Asai",
+        "Tomoyuki Noda",
+        "Jun Morimoto"
+      ],
+      "summary": "Human motor control remains agile and robust despite limited sensory information for feedback, a property attributed to the body's ability to perform morphological computation through muscle coordination with variable impedance. However, it remains unclear how such low-level mechanical computation reduces the control requirements of the high-level controller. In this study, we implement a hierarchical controller consisting of a high-level neural network trained by reinforcement learning and a low-level variable-impedance muscle coor dination model with mono- and biarticular muscles in monoped locomotion task. We systematically restrict the high-level controller by varying the control frequency and by introducing biologically inspired observation conditions: delayed, partial, and substituted observation. Under these conditions, we evaluate how the low-level variable-impedance muscle coordination contributes to learning process of high-level neural network. The results show that variable-impedance muscle coordination enables stable locomotion even under slow-rate control frequency and limited observation conditions. These findings demonstrate that the morphological computation of muscle coordination effectively offloads high-frequency feedback of the high-level controller and provide a design principle for the controller in motor control.",
+      "published": "2025-12-03T05:27:25+00:00",
+      "updated": "2025-12-03T05:27:25+00:00",
+      "categories": [
+        "eess.SY",
+        "cs.RO"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03459v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03459v1",
+      "found_date": "2025-12-04T16:35:16.909568"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03453v1",
+      "arxiv_id": "2512.03453v1",
+      "title": "GeoVideo: Introducing Geometric Regularization into Video Generation Model",
+      "authors": [
+        "Yunpeng Bai",
+        "Shaoheng Fang",
+        "Chaohui Yu",
+        "Fan Wang",
+        "Qixing Huang"
+      ],
+      "summary": "Recent advances in video generation have enabled the synthesis of high-quality and visually realistic clips using diffusion transformer models. However, most existing approaches operate purely in the 2D pixel space and lack explicit mechanisms for modeling 3D structures, often resulting in temporally inconsistent geometries, implausible motions, and structural artifacts. In this work, we introduce geometric regularization losses into video generation by augmenting latent diffusion models with per-frame depth prediction. We adopted depth as the geometric representation because of the great progress in depth prediction and its compatibility with image-based latent encoders. Specifically, to enforce structural consistency over time, we propose a multi-view geometric loss that aligns the predicted depth maps across frames within a shared 3D coordinate system. Our method bridges the gap between appearance generation and 3D structure modeling, leading to improved spatio-temporal coherence, shape consistency, and physical plausibility. Experiments across multiple datasets show that our approach produces significantly more stable and geometrically consistent results than existing baselines.",
+      "published": "2025-12-03T05:11:57+00:00",
+      "updated": "2025-12-03T05:11:57+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "tags": [
+        "Video Generation (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03453v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03453v1",
+      "found_date": "2025-12-04T16:35:16.911559"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03451v1",
+      "arxiv_id": "2512.03451v1",
+      "title": "GalaxyDiT: Efficient Video Generation with Guidance Alignment and Adaptive Proxy in Diffusion Transformers",
+      "authors": [
+        "Zhiye Song",
+        "Steve Dai",
+        "Ben Keller",
+        "Brucek Khailany"
+      ],
+      "summary": "Diffusion models have revolutionized video generation, becoming essential tools in creative content generation and physical simulation. Transformer-based architectures (DiTs) and classifier-free guidance (CFG) are two cornerstones of this success, enabling strong prompt adherence and realistic video quality. Despite their versatility and superior performance, these models require intensive computation. Each video generation requires dozens of iterative steps, and CFG doubles the required compute. This inefficiency hinders broader adoption in downstream applications.\n  We introduce GalaxyDiT, a training-free method to accelerate video generation with guidance alignment and systematic proxy selection for reuse metrics. Through rank-order correlation analysis, our technique identifies the optimal proxy for each video model, across model families and parameter scales, thereby ensuring optimal computational reuse. We achieve $1.87\\times$ and $2.37\\times$ speedup on Wan2.1-1.3B and Wan2.1-14B with only 0.97% and 0.72% drops on the VBench-2.0 benchmark. At high speedup rates, our approach maintains superior fidelity to the base model, exceeding prior state-of-the-art approaches by 5 to 10 dB in peak signal-to-noise ratio (PSNR).",
+      "published": "2025-12-03T05:08:18+00:00",
+      "updated": "2025-12-03T05:08:18+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "tags": [
+        "Video Generation (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03451v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03451v1",
+      "found_date": "2025-12-04T16:35:16.914082"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03442v1",
+      "arxiv_id": "2512.03442v1",
+      "title": "PretrainZero: Reinforcement Active Pretraining",
+      "authors": [
+        "Xingrun Xing",
+        "Zhiyuan Fan",
+        "Jie Lou",
+        "Guoqi Li",
+        "Jiajun Zhang",
+        "Debing Zhang"
+      ],
+      "summary": "Mimicking human behavior to actively learning from general experience and achieve artificial general intelligence has always been a human dream. Recent reinforcement learning (RL) based large-thinking models demonstrate impressive expert-level abilities, i.e., software and math, but still rely heavily on verifiable rewards in specific domains, placing a significant bottleneck to extend the performance boundary of general reasoning capabilities. In this work, we propose PretrainZero, a reinforcement active learning framework built on the pretraining corpus to extend RL from domain-specific post-training to general pretraining. PretrainZero features the following characteristics: 1) Active pretraining: inspired by the active learning ability of humans, PretrainZero learns a unified reasoning policy to actively identify reasonable and informative contents from pretraining corpus, and reason to predict these contents by RL. 2) Self-supervised learning: without any verifiable labels, pretrained reward models, or supervised fine-tuning, we directly pretrain reasoners from 3 to 30B base models on the general Wikipedia corpus using RL, significantly breaking the verification data-wall for general reasoning. 3) Verification scaling: by tackling increasingly challenging masked spans, PretrainZero substantially enhances the general reasoning abilities of pretrained base models. In reinforcement pretraining, PretrainZero improves Qwen3-4B-Base for 8.43, 5.96 and 10.60 on MMLU-Pro, SuperGPQA and math average benchmarks. In post-training, the pretrained models can also serve as reasoning foundation models for downstream RLVR tasks.",
+      "published": "2025-12-03T04:51:32+00:00",
+      "updated": "2025-12-03T04:51:32+00:00",
+      "categories": [
+        "cs.CL"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03442v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03442v1",
+      "found_date": "2025-12-04T16:35:16.917608"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03429v1",
+      "arxiv_id": "2512.03429v1",
+      "title": "World Models for Autonomous Navigation of Terrestrial Robots from LIDAR Observations",
+      "authors": [
+        "Raul Steinmetz",
+        "Fabio Demo Rosa",
+        "Victor Augusto Kich",
+        "Jair Augusto Bottega",
+        "Ricardo Bedin Grando",
+        "Daniel Fernando Tello Gamarra"
+      ],
+      "summary": "Autonomous navigation of terrestrial robots using Reinforcement Learning (RL) from LIDAR observations remains challenging due to the high dimensionality of sensor data and the sample inefficiency of model-free approaches. Conventional policy networks struggle to process full-resolution LIDAR inputs, forcing prior works to rely on simplified observations that reduce spatial awareness and navigation robustness. This paper presents a novel model-based RL framework built on top of the DreamerV3 algorithm, integrating a Multi-Layer Perceptron Variational Autoencoder (MLP-VAE) within a world model to encode high-dimensional LIDAR readings into compact latent representations. These latent features, combined with a learned dynamics predictor, enable efficient imagination-based policy optimization. Experiments on simulated TurtleBot3 navigation tasks demonstrate that the proposed architecture achieves faster convergence and higher success rate compared to model-free baselines such as SAC, DDPG, and TD3. It is worth emphasizing that the DreamerV3-based agent attains a 100% success rate across all evaluated environments when using the full dataset of the Turtlebot3 LIDAR (360 readings), while model-free methods plateaued below 85%. These findings demonstrate that integrating predictive world models with learned latent representations enables more efficient and robust navigation from high-dimensional sensory data.",
+      "published": "2025-12-03T04:15:31+00:00",
+      "updated": "2025-12-03T04:15:31+00:00",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "tags": [
+        "Reinforcement Learning (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03429v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03429v1",
+      "found_date": "2025-12-04T16:35:16.924630"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03324v1",
+      "arxiv_id": "2512.03324v1",
+      "title": "Cache What Lasts: Token Retention for Memory-Bounded KV Cache in LLMs",
+      "authors": [
+        "Ngoc Bui",
+        "Shubham Sharma",
+        "Simran Lamba",
+        "Saumitra Mishra",
+        "Rex Ying"
+      ],
+      "summary": "Memory and computation remain core bottlenecks in long-horizon LLM inference due to the quadratic cost of self-attention and the ever-growing key-value (KV) cache. Existing strategies for memory-bounded inference, such as quantization, offloading, or heuristic KV eviction, either incur high orchestration costs or rely on unreliable attention-based proxies of importance. We propose TRIM-KV, a novel approach that learns each token's intrinsic importance at creation time via a lightweight retention gate. Each gate predicts a scalar retention score that decays over time, reflecting the long-term utility of the token for a specific layer and head. Tokens with low scores are evicted when the memory budget is exceeded, ensuring that the cache always contains the most critical tokens. TRIM-KV is trained efficiently through distillation from a frozen LLM combined with a capacity loss, requiring only gate fine-tuning and adding negligible inference overhead. Across mathematical reasoning (GSM8K, MATH-500, AIME24), procedural generation (LongProc), conversational long-memory benchmarks (LongMemEval), and long-context understanding (LongBench and SCBench), TRIM-KV consistently outperforms strong eviction and learnable retrieval baselines, especially in low-memory regimes. Remarkably, it even surpasses full-cache models in some settings, showing that selective retention can serve as a form of regularization, suppressing noise from uninformative tokens. Qualitative analyses further reveal that learned retention scores align with human intuition, naturally recovering heuristics such as sink tokens, sliding windows, and gist compression without explicit design. Beyond efficiency, retention scores provide insights into layer- and head-specific roles, suggesting a new path toward LLM interpretability.",
+      "published": "2025-12-03T00:20:35+00:00",
+      "updated": "2025-12-03T00:20:35+00:00",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "tags": [
+        "KV Cache",
+        "LLM Inference"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03324v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03324v1",
+      "found_date": "2025-12-04T16:35:20.193392"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03644v1",
+      "arxiv_id": "2512.03644v1",
+      "title": "FFTrainer: Fast Failover in Large-Language Model Training with Almost-Free State Management",
+      "authors": [
+        "Bohan Zhao",
+        "Yuanhong Wang",
+        "Chenglin Liu",
+        "Jiagi Pan",
+        "Guang Yang",
+        "Ruitao Liu",
+        "Tingrui Zhang",
+        "Kai Luo",
+        "Wei Xu"
+      ],
+      "summary": "Recent developments in large language models (LLMs) have introduced new requirements for efficient and robust training. As LLM clusters scale, node failures, lengthy recoveries, and bulky checkpoints erode efficiency. Infrequent asynchronous checkpoints trigger costly rollbacks, yet higher frequencies add prohibitive overhead. To address these challenges, we propose FFTrainer, a system designed for robust LLM training. FFTrainer leverages surplus network capacity to quickly save and load states, thereby preventing rollbacks and accelerating recovery. Compared with prior checkpointing approaches, FFTrainer reduces recovery time by up to 98% and mitigates GPU utilization loss by up to 68% without hindering normal training.",
+      "published": "2025-12-03T10:27:35+00:00",
+      "updated": "2025-12-03T10:27:35+00:00",
+      "categories": [
+        "cs.DC"
+      ],
+      "tags": [
+        "LLM Training (System)"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03644v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03644v1",
+      "found_date": "2025-12-04T16:42:32.109747"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03604v1",
+      "arxiv_id": "2512.03604v1",
+      "title": "Physics-Based Communication Compression via Lyapunov-Weighted Event-Triggered Control",
+      "authors": [
+        "Abbas Tariverdi"
+      ],
+      "summary": "Event-Triggered Control (ETC) reduces communication overhead in networked systems by transmitting only when stability requires it. Conventional mechanisms use isotropic error thresholds ($\\|e\\| \\le σ\\|x\\|$), treating all directions equally. This ignores stability geometry and triggers conservatively. We propose a static directional triggering mechanism that exploits this asymmetry. By weighting errors via the Lyapunov matrix $P$, we define an anisotropic half-space scaling with instantaneous energy margins: larger deviations tolerated along stable modes, strict bounds where instability threatens. We prove global asymptotic stability and exclusion of Zeno behavior. Monte Carlo simulations ($N=100$) show 43.6\\% fewer events than optimally tuned isotropic methods while achieving $2.1\\times$ better control performance than time-varying alternatives. The mechanism functions as a runtime safety gate for learning-based controllers operating under communication constraints.",
+      "published": "2025-12-03T09:36:20+00:00",
+      "updated": "2025-12-03T09:36:20+00:00",
+      "categories": [
+        "eess.SY"
+      ],
+      "tags": [
+        "LLM Communication"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03604v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03604v1",
+      "found_date": "2025-12-04T16:42:32.121315"
+    },
+    {
+      "id": "http://arxiv.org/abs/2512.03466v1",
+      "arxiv_id": "2512.03466v1",
+      "title": "AsymPuzl: An Asymmetric Puzzle for multi-agent cooperation",
+      "authors": [
+        "Xavier Cadet",
+        "Edward Koh",
+        "Peter Chin"
+      ],
+      "summary": "Large Language Model (LLM) agents are increasingly studied in multi-turn, multi-agent scenarios, yet most existing setups emphasize open-ended role-play rather than controlled evaluation. We introduce AsymPuzl, a minimal but expressive two-agent puzzle environment designed to isolate communication under information asymmetry. Each agent observes complementary but incomplete views of a symbolic puzzle and must exchange messages to solve it cooperatively. Using a diverse set of current-generation and open-source LLMs, we show that (i) strong models such as GPT-5 and Claude-4.0 reliably converge across puzzle sizes on the solution by sharing complete information in two turns, (ii) weaker models often ignore partner messages or over-correct their hypotheses, and (iii) feedback design is non-trivial: simple self-feedback improves success rates, while detailed joint feedback can hurt performance. These findings show that even in simple cooperative tasks, LLM communication strategies diverge and depend on the granularity of feedback signals. AsymPuzl thus provides a testbed for probing the limits of multi-turn cooperation and opens avenues for studying coordination mechanisms.",
+      "published": "2025-12-03T05:42:01+00:00",
+      "updated": "2025-12-03T05:42:01+00:00",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "tags": [
+        "LLM Communication"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2512.03466v1",
+      "arxiv_url": "http://arxiv.org/abs/2512.03466v1",
+      "found_date": "2025-12-04T16:42:39.129071"
+    }
+  ]
+}
