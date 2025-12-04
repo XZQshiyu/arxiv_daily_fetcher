@@ -172,8 +172,4 @@ crontab -e
 - 建议定期备份 `paper_data_*` 目录
 - LLM Training (System) 和 Video Generation (System) 需要同时包含 system 相关关键词才会被筛选
 
-## 许可证
-
-MIT License
-
 
