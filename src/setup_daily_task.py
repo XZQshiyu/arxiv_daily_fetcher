@@ -11,9 +11,9 @@ from pathlib import Path
 def create_task_scheduler_xml():
     """生成任务计划程序的 XML 配置文件"""
     
-    script_dir = Path(__file__).parent.absolute()
+    script_dir = Path(__file__).parent.parent.absolute()  # 项目根目录
     python_exe = sys.executable
-    script_path = script_dir / "arxiv_fetcher.py"
+    script_path = script_dir / "src" / "arxiv_fetcher.py"
     
     xml_content = f"""<?xml version="1.0" encoding="UTF-16"?>
 <Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">

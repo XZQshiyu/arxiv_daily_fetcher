@@ -1,0 +1,75 @@
+{
+  "keywords": {
+    "kv_cache": [
+      "KV cache",
+      "KV Cache",
+      "kv cache",
+      "KVCache"
+    ],
+    "llm_inference": [
+      "LLM inference",
+      "llm inference",
+      "large language model inference"
+    ],
+    "llm_training": [
+      "LLM training",
+      "llm training",
+      "large language model training"
+    ],
+    "llm_communication": [
+      "LLM communication",
+      "llm communication",
+      "communication optimization",
+      "communication efficient",
+      "allreduce",
+      "all-gather",
+      "collective communication",
+      "gradient communication",
+      "communication compression"
+    ],
+    "video_generation": [
+      "video generation",
+      "video synthesis",
+      "video generation model"
+    ]
+  },
+  "system_keywords": [
+    "system",
+    "systems",
+    "architecture",
+    "framework",
+    "platform",
+    "infrastructure",
+    "deployment",
+    "serving",
+    "serving system",
+    "inference system",
+    "training system",
+    "runtime",
+    "engine",
+    "pipeline"
+  ],
+  "categories": {
+    "KV Cache": {
+      "keywords": "kv_cache",
+      "requires_system": false
+    },
+    "LLM Inference": {
+      "keywords": "llm_inference",
+      "requires_system": false
+    },
+    "LLM Training (System)": {
+      "keywords": "llm_training",
+      "requires_system": true
+    },
+    "LLM Communication": {
+      "keywords": "llm_communication",
+      "requires_system": false
+    },
+    "Video Generation (System)": {
+      "keywords": "video_generation",
+      "requires_system": true
+    }
+  }
+}
+

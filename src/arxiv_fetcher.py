@@ -21,11 +21,15 @@ if sys.platform == 'win32':
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
     sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 
+# 获取项目根目录用于日志文件
+project_root = Path(__file__).parent.parent
+log_file = project_root / 'arxiv_fetcher.log'
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('arxiv_fetcher.log', encoding='utf-8'),
+        logging.FileHandler(log_file, encoding='utf-8'),
         logging.StreamHandler()
     ]
 )
@@ -35,67 +39,155 @@ logger = logging.getLogger(__name__)
 class ArxivPaperFetcher:
     """arXiv 论文抓取和筛选工具"""
     
-    def __init__(self, data_dir: str = None):
+    def __init__(self, data_dir: str = None, config_file: str = "config.json"):
         """
         初始化抓取工具
         
         Args:
             data_dir: 数据存储目录，如果为 None 则使用带日期的目录名
+            config_file: 配置文件路径，如果为 None 则使用默认关键词
         """
-        # 如果没有指定目录，使用带日期的目录名
+        # 获取项目根目录（src 的父目录）
+        project_root = Path(__file__).parent.parent
+        
+        # 加载配置（配置文件路径相对于项目根目录）
+        if not Path(config_file).is_absolute():
+            config_file_path = project_root / config_file
+        else:
+            config_file_path = Path(config_file)
+        self.config = self._load_config(str(config_file_path))
+        
+        # 如果没有指定目录，使用带日期的目录名（放在 result 目录下）
         if data_dir is None:
             date_str = datetime.now().strftime("%Y.%m.%d")
-            data_dir = f"paper_data_{date_str}"
+            result_dir = project_root / "result"
+            data_dir = result_dir / f"paper_data_{date_str}"
+        else:
+            # 如果指定了目录，转换为 Path 对象
+            data_dir = Path(data_dir)
         
         self.data_dir = Path(data_dir)
-        self.data_dir.mkdir(exist_ok=True)
+        self.data_dir.mkdir(parents=True, exist_ok=True)
         
-        # 关键词列表（不区分大小写）
-        # 注意：Video Generation 和 LLM Training 需要额外检查 system 相关关键词
-        self.keywords = [
-            "KV cache",
-            "KV Cache",
-            "kv cache",
-            "KVCache",
-            "LLM inference",
-            "llm inference",
-            "large language model inference",
-            "LLM training",
-            "llm training",
-            "large language model training",
-            "LLM communication",
-            "llm communication",
-            "communication optimization",
-            "communication efficient",
-            "allreduce",
-            "all-gather",
-            "collective communication",
-            "video generation",
-            "video synthesis",
-            "video generation model"  # Video Generation 需要 system 相关
-        ]
-        
-        # System 相关关键词（用于 RL 和 Video Generation 的额外筛选）
-        self.system_keywords = [
-            "system",
-            "systems",
-            "architecture",
-            "framework",
-            "platform",
-            "infrastructure",
-            "deployment",
-            "serving",
-            "serving system",
-            "inference system",
-            "training system",
-            "runtime",
-            "engine",
-            "pipeline"
-        ]
+        # 从配置中获取关键词和分类信息
+        self.keywords_map = self.config.get('keywords', {})
+        self.system_keywords = self.config.get('system_keywords', [])
+        self.categories_config = self.config.get('categories', {})
         
         # 已记录的论文ID集合（用于去重）
         self.recorded_papers_file = self.data_dir / "recorded_papers.json"
         self.recorded_paper_ids = self._load_recorded_papers()
+    
+    def _load_config(self, config_file: str) -> Dict:
+        """
+        加载配置文件，如果不存在则使用默认配置
+        
+        Args:
+            config_file: 配置文件路径（相对于项目根目录）
+            
+        Returns:
+            配置字典
+        """
+        # 如果路径是相对路径，从项目根目录查找
+        config_path = Path(config_file)
+        if not config_path.is_absolute():
+            project_root = Path(__file__).parent.parent
+            config_path = project_root / config_file
+        
+        if config_path.exists():
+            try:
+                with open(config_path, 'r', encoding='utf-8') as f:
+                    config = json.load(f)
+                logger.info(f"已加载配置文件: {config_file}")
+                return config
+            except Exception as e:
+                logger.warning(f"加载配置文件失败: {e}，使用默认配置")
+                return self._get_default_config()
+        else:
+            logger.info(f"配置文件不存在: {config_file}，使用默认配置")
+            return self._get_default_config()
+    
+    def _get_default_config(self) -> Dict:
+        """
+        获取默认配置
+        
+        Returns:
+            默认配置字典
+        """
+        return {
+            "keywords": {
+                "kv_cache": [
+                    "KV cache",
+                    "KV Cache",
+                    "kv cache",
+                    "KVCache"
+                ],
+                "llm_inference": [
+                    "LLM inference",
+                    "llm inference",
+                    "large language model inference"
+                ],
+                "llm_training": [
+                    "LLM training",
+                    "llm training",
+                    "large language model training"
+                ],
+                "llm_communication": [
+                    "LLM communication",
+                    "llm communication",
+                    "communication optimization",
+                    "communication efficient",
+                    "allreduce",
+                    "all-gather",
+                    "collective communication",
+                    "gradient communication",
+                    "communication compression"
+                ],
+                "video_generation": [
+                    "video generation",
+                    "video synthesis",
+                    "video generation model"
+                ]
+            },
+            "system_keywords": [
+                "system",
+                "systems",
+                "architecture",
+                "framework",
+                "platform",
+                "infrastructure",
+                "deployment",
+                "serving",
+                "serving system",
+                "inference system",
+                "training system",
+                "runtime",
+                "engine",
+                "pipeline"
+            ],
+            "categories": {
+                "KV Cache": {
+                    "keywords": "kv_cache",
+                    "requires_system": False
+                },
+                "LLM Inference": {
+                    "keywords": "llm_inference",
+                    "requires_system": False
+                },
+                "LLM Training (System)": {
+                    "keywords": "llm_training",
+                    "requires_system": True
+                },
+                "LLM Communication": {
+                    "keywords": "llm_communication",
+                    "requires_system": False
+                },
+                "Video Generation (System)": {
+                    "keywords": "video_generation",
+                    "requires_system": True
+                }
+            }
+        }
     
     def _load_recorded_papers(self) -> Set[str]:
         """加载已记录的论文ID"""
@@ -123,7 +215,7 @@ class ArxivPaperFetcher:
     
     def _check_keywords(self, paper: arxiv.Result) -> bool:
         """
-        检查论文是否包含关键词
+        检查论文是否包含关键词（基于配置文件）
         
         Args:
             paper: arxiv 论文对象
@@ -131,49 +223,30 @@ class ArxivPaperFetcher:
         Returns:
             如果包含关键词返回 True，否则返回 False
         """
-        import re
-        # 检查标题和摘要
         text_to_check = f"{paper.title} {paper.summary}".lower()
         
-        # 检查 KV Cache 和 LLM Inference（不需要 system 限制）
-        if any(kw in text_to_check for kw in ["kv cache", "kvcache"]):
-            return True
-        
-        if any(kw in text_to_check for kw in ["llm inference", "large language model inference"]):
-            return True
-        
-        # LLM Training 必须包含 system 相关关键词
-        training_keywords = ["llm training", "large language model training"]
-        if any(train_kw in text_to_check for train_kw in training_keywords):
-            if any(sys_kw in text_to_check for sys_kw in self.system_keywords):
-                return True
-        
-        # LLM Communication 优化相关
-        comm_keywords = [
-            "llm communication",
-            "communication optimization",
-            "communication efficient",
-            "allreduce",
-            "all-gather",
-            "collective communication",
-            "gradient communication",
-            "communication compression"
-        ]
-        if any(comm_kw in text_to_check for comm_kw in comm_keywords):
-            return True
-        
-        # Video Generation 必须包含 system 相关关键词
-        video_keywords = ["video generation", "video synthesis", "video generation model"]
-        if any(video_kw in text_to_check for video_kw in video_keywords):
-            # 检查是否包含 system 相关关键词
-            if any(sys_kw in text_to_check for sys_kw in self.system_keywords):
-                return True
+        # 遍历所有分类配置
+        for category_name, category_config in self.categories_config.items():
+            keyword_group = category_config.get('keywords')
+            requires_system = category_config.get('requires_system', False)
+            
+            # 获取该分类的关键词列表
+            keywords = self.keywords_map.get(keyword_group, [])
+            
+            # 检查是否包含该分类的关键词
+            if any(kw.lower() in text_to_check for kw in keywords):
+                # 如果需要 system 限制，检查是否包含 system 关键词
+                if requires_system:
+                    if any(sys_kw.lower() in text_to_check for sys_kw in self.system_keywords):
+                        return True
+                else:
+                    return True
         
         return False
     
     def _categorize_paper(self, paper: arxiv.Result) -> List[str]:
         """
-        对论文进行分类
+        对论文进行分类（基于配置文件）
         
         Args:
             paper: arxiv 论文对象
@@ -184,37 +257,22 @@ class ArxivPaperFetcher:
         categories = []
         text = f"{paper.title} {paper.summary}".lower()
         
-        if any(kw in text for kw in ["kv cache", "kvcache"]):
-            categories.append("KV Cache")
-        
-        if any(kw in text for kw in ["llm inference", "large language model inference"]):
-            categories.append("LLM Inference")
-        
-        # LLM Training 必须包含 system 相关关键词
-        training_keywords = ["llm training", "large language model training"]
-        if any(train_kw in text for train_kw in training_keywords):
-            if any(sys_kw in text for sys_kw in self.system_keywords):
-                categories.append("LLM Training (System)")
-        
-        # LLM Communication 优化相关
-        comm_keywords = [
-            "llm communication",
-            "communication optimization",
-            "communication efficient",
-            "allreduce",
-            "all-gather",
-            "collective communication",
-            "gradient communication",
-            "communication compression"
-        ]
-        if any(comm_kw in text for comm_kw in comm_keywords):
-            categories.append("LLM Communication")
-        
-        # Video Generation 必须包含 system 相关关键词
-        video_keywords = ["video generation", "video synthesis", "video generation model"]
-        if any(video_kw in text for video_kw in video_keywords):
-            if any(sys_kw in text for sys_kw in self.system_keywords):
-                categories.append("Video Generation (System)")
+        # 遍历所有分类配置
+        for category_name, category_config in self.categories_config.items():
+            keyword_group = category_config.get('keywords')
+            requires_system = category_config.get('requires_system', False)
+            
+            # 获取该分类的关键词列表
+            keywords = self.keywords_map.get(keyword_group, [])
+            
+            # 检查是否包含该分类的关键词
+            if any(kw.lower() in text for kw in keywords):
+                # 如果需要 system 限制，检查是否包含 system 关键词
+                if requires_system:
+                    if any(sys_kw.lower() in text for sys_kw in self.system_keywords):
+                        categories.append(category_name)
+                else:
+                    categories.append(category_name)
         
         return categories if categories else ["Other"]
     
@@ -371,14 +429,8 @@ class ArxivPaperFetcher:
                     papers_by_category[tag] = []
                 papers_by_category[tag].append(paper)
         
-        # 定义分类顺序
-        category_order = [
-            "KV Cache",
-            "LLM Inference",
-            "LLM Training (System)",
-            "LLM Communication",
-            "Video Generation (System)"
-        ]
+        # 从配置中获取分类顺序
+        category_order = list(self.categories_config.keys())
         
         # 为每个分类生成单独的文件
         generated_files = []
@@ -495,14 +547,8 @@ class ArxivPaperFetcher:
                     papers_by_category[tag] = []
                 papers_by_category[tag].append(paper)
         
-        # 定义分类显示顺序（与 generate_markdown_report 保持一致）
-        category_order = [
-            "KV Cache",
-            "LLM Inference",
-            "LLM Training (System)",
-            "LLM Communication",
-            "Video Generation (System)"
-        ]
+        # 从配置中获取分类显示顺序
+        category_order = list(self.categories_config.keys())
         
         logger.info("")
         logger.info("=" * 60)
@@ -583,11 +629,17 @@ def main():
         action='store_true',
         help='不生成 Markdown 报告'
     )
+    parser.add_argument(
+        '--config',
+        type=str,
+        default='config.json',
+        help='配置文件路径（默认：config.json，如果不存在则使用默认配置）'
+    )
     
     args = parser.parse_args()
     
     # 创建抓取工具并执行
-    fetcher = ArxivPaperFetcher(data_dir=args.data_dir)
+    fetcher = ArxivPaperFetcher(data_dir=args.data_dir, config_file=args.config)
     fetcher.run_daily_fetch(
         days_back=args.days,
         generate_report=not args.no_report

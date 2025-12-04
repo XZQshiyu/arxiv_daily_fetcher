@@ -37,6 +37,8 @@ env/
 # 论文数据目录（按日期命名）
 paper_data_*/
 paper_data/
+result/
+result/
 
 # 日志文件
 *.log
@@ -49,6 +51,10 @@ arxiv_daily_task.xml
 *.tmp
 *.bak
 *.cache
+
+# 配置文件（用户自定义的配置不提交，但示例文件要提交）
+!config.json
+config.json.example
 
 # 操作系统文件
 Thumbs.db
